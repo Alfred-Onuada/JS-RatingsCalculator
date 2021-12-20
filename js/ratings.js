@@ -21,10 +21,8 @@ function collect_ratings() {
     return ratings;
   })
 
-  document.onchange = () => {
+  document.addEventListener('change', () => {
     const ratings = collect_ratings();
-    let avgElem = document.getElementById('average');
-
-    avgElem.value = ratings.average.toFixed(2);
-  }
+    document.querySelector('#average').value = ratings.average.toFixed(2);
+  })
 }
